@@ -125,22 +125,26 @@ public class Veiculo {
     public boolean ligar() {
         if (isLigado()) {
             System.out.println("Carro ja esta ligado");
+            return isLigado;
         } else {
             setLigado(true);
             System.out.println("Vrum vrum, este carro acaba de ser ligado");
+            return isLigado;
         }
-        return isLigado;
     }
 
-    public void desligar() {
+    public boolean desligar() {
         if (isLigado() && (getVelocidade() == 0)) {
             setLigado(false);
             System.out.println("Este carro acaba de ser desligado");
         } else if (!isLigado()) {
             System.out.println("Carro ja esta desligado");
+            return !isLigado;
         } else if (isLigado() && (getVelocidade() > 0)) {
             System.out.println("Impossivel desligar o carro em movimento");
+            return isLigado;
         }
+        return !isLigado;
     }
 
     // Construtor

@@ -2,6 +2,7 @@ package src.jokenpo;
 
 public class Juiz {
 
+    // Metodo toString utilizado para fins de debug
     @Override
     public String toString() {
         return "Juiz{}";
@@ -23,6 +24,7 @@ public class Juiz {
                 jogadorDois.setCampeao(true);
                 System.out.println("Jogador Dois ganhou ao usar tesoura contra papel.");
             }
+
             if (jogadorDois.getMao() == JoKenPo.PAPEL)
                 System.out.println("Empate técnico de papel contra papel.");
 
@@ -32,10 +34,12 @@ public class Juiz {
                 jogadorDois.setCampeao(true);
                 System.out.println("Jogador Dois ganhou ao usar papel contra pedra.");
             }
+
             if (jogadorDois.getMao() == JoKenPo.TESOURA) {
                 jogadorUm.setCampeao(true);
                 System.out.println("Jogador Um ganhou ao usar pedra contra tesoura.");
             }
+
             if (jogadorDois.getMao() == JoKenPo.PEDRA)
                 System.out.println("Empate técnico de pedra contra pedra.");
 
@@ -45,10 +49,12 @@ public class Juiz {
                 jogadorDois.setCampeao(true);
                 System.out.println("Jogador Dois ganhou ao usar pedra contra tesoura.");
             }
+
             if (jogadorDois.getMao() == JoKenPo.PAPEL) {
                 jogadorUm.setCampeao(true);
                 System.out.println("Jogador Um ganhou ao usar tesoura contra papel.");
             }
+
             if (jogadorDois.getMao() == JoKenPo.TESOURA)
                 System.out.println("Empate técnico de tesoura contra tesoura.");
         }

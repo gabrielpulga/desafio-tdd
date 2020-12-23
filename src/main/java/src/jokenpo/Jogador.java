@@ -4,6 +4,7 @@ public class Jogador {
     private JoKenPo mao;
     private boolean isCampeao;
 
+    // Metodo toString utilizado para fins de debug
     @Override
     public String toString() {
         return "Jogador{" +

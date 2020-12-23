@@ -31,21 +31,39 @@ public class veiculoTest {
         Assert.assertEquals(veiculo.getLitrosCombustivel()+20, veiculo.abastecer(20));
     }
 
-
     @Test
     public void carroDeveMudarDeCorAoChamarEsteMetodo() {
         Assert.assertEquals("Azul", veiculo.pintar("Azul"));
     }
 
     @Test
-    public void carroDeveLigarAoChamarEsteMetodo() throws Exception {
+    public void carroDeveLigarAoChamarEsteMetodo_seEstiverDesligado() throws Exception {
+        // Desligar o carro
+        veiculo.setLigado(false);
+        Assert.assertEquals(!veiculo.isLigado(), veiculo.ligar());
+    }
+
+    @Test
+    public void carroNaoDeveLigarAoChamarEsteMetodo_seJaEstiverLigado() throws Exception {
         Assert.assertEquals(veiculo.isLigado(), veiculo.ligar());
     }
 
-
     @Test
     public void carroDeveDesligarAoChamarEsteMetodo_seEstiverParado() throws Exception {
+        // Parar o carro
+        veiculo.setVelocidade(0);
+        Assert.assertEquals(veiculo.isLigado(), veiculo.desligar());
     }
 
+    @Test
+    public void carroNaoDeveDesligarAoChamarEsteMetodo_seEstiverEmMovimento() throws Exception {
+        Assert.assertEquals(veiculo.isLigado(), veiculo.desligar());
+    }
 
+    @Test
+    public void carroNaoDeveDesligarAoChamarEsteMetodo_seJaEstiverDesligado() throws Exception {
+        // Desligar o carro
+        veiculo.setLigado(false);
+        Assert.assertEquals(!veiculo.isLigado(), veiculo.desligar());
+    }
 }
