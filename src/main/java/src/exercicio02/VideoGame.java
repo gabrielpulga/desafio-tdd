@@ -43,9 +43,10 @@ public class VideoGame extends Produto implements Imposto {
     public double calculaImposto() {
         if (this.isUsado()) {
             System.out.println("Imposto " + this.getNome() + " usado, R$" + 0.25*this.getPreco());
+            return 0.25*this.getPreco();
         } else {
             System.out.println("Imposto " + this.getNome() + " novo, R$" + 0.40*this.getPreco());
+            return 0.40*this.getPreco();
         }
-        return 0;
     }
 }

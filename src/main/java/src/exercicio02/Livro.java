@@ -43,9 +43,10 @@ public class Livro extends Produto implements Imposto {
     public double calculaImposto() {
         if (this.getTema() == "educativo") {
             System.out.println("Livro educativo nao tem imposto : " + this.getNome());
+            return 0;
         } else {
             System.out.println("R$" + 0.1 * this.getPreco() + " de imposto sobre o livro " + this.getNome());
+            return 0.1*this.getPreco();
         }
-        return 0;
     }
 }

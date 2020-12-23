@@ -89,6 +89,7 @@ public abstract class Personagem {
         Level = level;
     }
 
-    public void lvlUp() {
+    public int lvlUp() {
+        return 0;
     }
 }

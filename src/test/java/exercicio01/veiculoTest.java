@@ -33,7 +33,7 @@ public class veiculoTest {
 
 
     @Test
-    public void carroDeveMudarDeCorAoChamarEsteMetodo() throws Exception {
+    public void carroDeveMudarDeCorAoChamarEsteMetodo() {
         Assert.assertEquals("Azul", veiculo.pintar("Azul"));
     }
 

@@ -17,12 +17,12 @@ public class gamesTest {
     }
 
     @Test
-    public void deveCalcularOImposto_seUsado() {
+    public void deveCalcularOImposto_seUsado() throws Exception {
         Assert.assertEquals(0.25*42, videoGameUsado.calculaImposto(), 0.0001);
     }
 
     @Test
-    public void deveCalcularOImposto_seNovo() {
+    public void deveCalcularOImposto_seNovo() throws Exception {
         Assert.assertEquals(0.40*42, videoGameNovo.calculaImposto(), 0.0001);
     }
 }

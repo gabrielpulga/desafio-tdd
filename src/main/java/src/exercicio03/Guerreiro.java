@@ -19,21 +19,29 @@ public class Guerreiro extends Personagem {
 
     int novaVida = 0;
     int novaForca = 0;
-    public void lvlUp() {
+    int novoNivel = 0;
+
+    public int lvlUp() {
+        novoNivel = novoNivel+1;
         novaVida = novaVida + 5 + this.getVida();
         novaForca = novaForca + 10 + this.getForca();
 
         System.out.println("O personagem " + this.getNome() + " subiu de nível e agora possui " + novaVida + " de vida e " + novaForca + " de forca");
 
+        return novoNivel;
     }
 
-    public void attack() {
+    public boolean attack() {
         double danoDoAtaque = getForca()*getLevel() + Math.floor(Math.random() * 301);
 
         System.out.println(getNome() + " realizou um ataque e causou " + danoDoAtaque + " de dano");
+
+        return true;
     }
 
-    public void aprenderHabilidade(String habilidadeAprendida) {
+    public boolean aprenderHabilidade(String habilidadeAprendida) {
         System.out.println(this.getNome() + " acabou de aprender a habilidade " + habilidadeAprendida + " e esta pronto para utiliza-la");
+
+        return true;
     }
 }

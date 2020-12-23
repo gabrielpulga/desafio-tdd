@@ -19,21 +19,29 @@ public class Mago extends Personagem {
 
     int novaMana = 0;
     int novaInteligencia = 0;
-    public void lvlUp() {
+    int novoNivel = 0;
+
+    public int lvlUp() {
+        novoNivel = novoNivel+1;
         novaMana = novaMana + 5 + this.getMana();
 
         novaInteligencia = novaInteligencia + 10 + this.getInteligencia();
 
         System.out.println("O personagem " + this.getNome() + " subiu de nível e agora possui " + novaMana + " de mana e " + novaInteligencia + " de inteligencia");
+        return novoNivel;
     }
 
-    public void attack() {
+    public boolean attack() {
         double danoDoAtaque = this.getInteligencia()*this.getLevel() + Math.floor(Math.random() * 301);
 
         System.out.println(this.getNome() + " realizou um ataque e causou " + danoDoAtaque + " de dano");
+
+        return true;
     }
 
-    public void aprenderMagia(String magiaAprendida) {
+    public boolean aprenderMagia(String magiaAprendida) {
         System.out.println(this.getNome() + " acabou de aprender a magia " + magiaAprendida + " e esta pronto para utiliza-la");
+
+        return true;
     }
 }

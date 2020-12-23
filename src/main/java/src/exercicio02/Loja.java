@@ -50,39 +50,48 @@ public class Loja {
         this.videoGames = videoGames;
     }
 
-    public void listaLivros() {
+    public Object listaLivros() {
         if (livros.isEmpty()) {
             System.out.println("A loja não tem livros no seu estoque.");
+            return 0;
         } else {
             System.out.println("\nA loja " + Loja.getNome() + " possui estes livros para a venda : ");
             for (Livro livro : livros) {
                 System.out.println("Titulo : " + livro.getNome() + " , Preco : " + livro.getPreco() + " , Quantidade : " + livro.getQtd() + " em estoque.");
             }
+            return livros;
         }
     }
 
-    public void listaVideoGames() {
+    public Object listaVideoGames() {
         if (videoGames.isEmpty()) {
             System.out.println("A loja não tem video-games no seu estoque.");
+            return 0;
         } else {
             System.out.println("\nA loja " + Loja.getNome() + " possui estes video-games para venda : ");
             for (VideoGame videoGame : videoGames) {
                 System.out.println("Titulo : " + videoGame.getNome() + " , Preco : " + videoGame.getPreco() + " , Quantidade : " + videoGame.getQtd() + " em estoque.");
             }
+            return videoGames;
         }
     }
 
-    public void calculaPatrimonio() {
+    public double calculaPatrimonio() {
         double valorTotalEmVideoGames = 0;
+
         for (VideoGame videoGame : videoGames) {
             valorTotalEmVideoGames = valorTotalEmVideoGames + (videoGame.getPreco() * videoGame.getQtd());
         }
+
         double valorTotalEmLivros = 0;
         for (Livro livro : livros) {
             valorTotalEmLivros = valorTotalEmLivros + (livro.getPreco() * livro.getQtd());
         }
 
         double valorTotal = valorTotalEmVideoGames + valorTotalEmLivros;
+
         System.out.println("O patrimonio da loja " + Loja.getNome() + " é de R$" +  valorTotal);
+
+        return valorTotal;
     }
 }
