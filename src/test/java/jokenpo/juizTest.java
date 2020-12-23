@@ -3,6 +3,9 @@ package jokenpo;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import src.jokenpo.JoKenPo;
+import src.jokenpo.Jogador;
+import src.jokenpo.Juiz;
 
 public class juizTest {
 
